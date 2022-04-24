@@ -57,3 +57,37 @@ function mySize(collection) {
     }
     return count
 }
+function myFirst(array, num) {
+    let results = []
+    if (!num){
+        return array[0]
+    }else {
+        for(let i = 0; i < num; i++) {
+            results.push(array[i])
+        }
+        return results
+    }
+}
+function myLast(array, num) {
+    if(!num) {
+        return array.slice(-1)[0]
+    }else {
+        return array.slice(-(num))
+    }
+}
+function myKeys (object) {
+    const keys = [];
+    for (let key in object){
+      keys.push(key);
+    }
+    return keys;
+}
+
+function myValues (object) {
+    const values = [];
+    for (let key in object){
+        values.push(object[key]);
+    }
+    return values;
+
+}
