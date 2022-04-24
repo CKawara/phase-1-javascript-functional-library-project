@@ -20,7 +20,7 @@ function myMap(collection, callback) {
     }
     return newArray
 }
-function myReduce(collection, callback){
+function myReduce(collection, callback, acc){
     let newData = standardizeData(collection)
     if(!acc){
         acc = newData[0]
@@ -30,4 +30,22 @@ function myReduce(collection, callback){
         acc = callback(acc, newData[i], newData)
     }
     return acc
+}
+function myFind(collection, predicate){
+    const newData = standardizeData(collection)
+    for(let i=0; i< newData.length; i++){
+        if(predicate(newData[i])){
+            return newData[i]
+        }
+    }
+}
+function myFilter(collection, predicate){
+    const newData = standardizeData(collection)
+    let newArray =[]
+    for(let i = 0; i< newData.length; i++){
+        if(predicate(newData[i])){
+            newArray.push(newData[i])
+        }
+    }
+    return newArray
 }
