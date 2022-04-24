@@ -49,3 +49,11 @@ function myFilter(collection, predicate){
     }
     return newArray
 }
+function mySize(collection) { 
+    const newData = standardizeData(collection)
+    let count = 0;
+    for(let i = 0; i < newData.length; i++) {
+        count++
+    }
+    return count
+}
